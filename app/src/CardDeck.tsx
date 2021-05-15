@@ -8,16 +8,24 @@ interface IState{
 }
 
 class CardDeck extends React.Component<{}, IState>{
+    selectedCardIds:number[] = [];
     state: IState = {
         cards: data
     }
 
     cardClickHandler = (card: ICard) => {
         const { cards } = this.state;
-        this.setState({
-            ...this.state,
-            cards: cards.map(c => c.Id === card.Id ? card : c)
-        })
+        if (this.selectedCardIds.length < 2){
+            //If the number of cards selected is less than 2;
+            //In other words, if no card is selected,
+            //it will add 1 card, if 1 card is selected, the second will be added.
+            this.selectedCardIds.push(card.Id);
+            this.setState({
+                ...this.state,
+                cards: cards.map(c => c.Id === card.Id ? card : c)
+            })
+        }
+
         console.log({ card });
     }
     render() {
