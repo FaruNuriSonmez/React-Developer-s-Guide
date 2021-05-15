@@ -3,9 +3,15 @@ import {ICard} from "./Types";
 
 export interface IProps{
     card:ICard
+    clickHandler:(card: ICard) => void;
 }
 
-const Card: React.FunctionComponent<IProps> = ({card}) => {
+const Card: React.FunctionComponent<IProps> = ({card, clickHandler}) => {
+    // @ts-ignore
+    const onClickHandler = () => {
+        card.state = "selected"
+        clickHandler(card)
+    }
     switch(card.state){
         case "matched":
             return(
@@ -29,7 +35,7 @@ const Card: React.FunctionComponent<IProps> = ({card}) => {
         default:
             return (
                 <div className="col">
-                    <div className="card unmatched">
+                    <div className="card unmatched clickable"  onClick={onClickHandler}>
                         <div className="card-body">
                         </div>
                     </div>

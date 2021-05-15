@@ -23,3 +23,7 @@
   color: white;
   background-color: transparent;
 }
+
+.card.clickable{
+  cursor: pointer;
+}
