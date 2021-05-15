@@ -8,12 +8,12 @@ export const data: ICard[] = [
     },
     {
         Id:2,
-        content:"A",
+        content:"B",
         state:"unmatched"
     },
     {
         Id:3,
-        content:"A",
+        content:"C",
         state:"unmatched"
     },
 ]
