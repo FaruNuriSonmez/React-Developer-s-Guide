@@ -7,12 +7,12 @@ export const data: ICard[] = [
         state:"unmatched"
     },
     {
-        Id:1,
+        Id:2,
         content:"A",
         state:"unmatched"
     },
     {
-        Id:1,
+        Id:3,
         content:"A",
         state:"unmatched"
     },
