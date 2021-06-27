@@ -1,14 +1,17 @@
 import React from "react";
-
-const HeroCard=()=>{
+import characterModel from "../models/character.models";
+interface PropTypes{
+    character:characterModel
+}
+const HeroCard=(props:PropTypes)=>{
     return(
         <div className="heroCard">
             <div className="heroCardWrapper">
                 <div className="heroImage">
-                    <img src={"https://terrigen-cdn-dev.marvel.com/content/prod/1x/013vis_ons_crd_01-1.jpg"}/>
+                    <img src={props.character.image}/>
                 </div>
                 <div className="heroName">
-                    Hero Name
+                    {props.character.name}
                 </div>
             </div>
         </div>
